@@ -7,6 +7,7 @@ public class EventsDemo : MonoBehaviour
     public UnityEvent OnTimerFinished;
     public float timerLength = 2;
     public float t;
+    public GameObject prefab;
 
     private void Update()
     {
@@ -35,5 +36,10 @@ public class EventsDemo : MonoBehaviour
     {
         Debug.Log("The mouse just left me!");
         banana.localScale = Vector3.one;
+    }
+
+    public void OnMouseDown()
+    {
+        Instantiate(prefab, Random.insideUnitCircle * 5, transform.rotation);
     }
 }
