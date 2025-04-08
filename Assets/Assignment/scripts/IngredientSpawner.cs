@@ -22,55 +22,53 @@ public class IngredientSpawner : MonoBehaviour
 
     public void SpawnBeefPatty()
     {
-        Vector3 spawnPos = GetMouseWorldPos();
-        Instantiate(beefPattyPrefab, spawnPos, Quaternion.identity, canvas.transform);
+        SpawnUIItem(beefPattyPrefab);
     }
 
     public void SpawnchickenPatty()
     {
-        Vector3 spawnPos = GetMouseWorldPos();
-        Instantiate(chickenPattyPrefab, spawnPos, Quaternion.identity, canvas.transform);
+        SpawnUIItem(chickenPattyPrefab);
     }
 
     public void SpawnFishPatty()
     {
-        Vector3 spawnPos = GetMouseWorldPos();
-        Instantiate(fishPattyPrefab, spawnPos, Quaternion.identity, canvas.transform);
+        SpawnUIItem(fishPattyPrefab);
     }
 
     public void SpawnBun()
     {
-        Vector3 spawnPos = GetMouseWorldPos();
-        Instantiate(bunPrefab, spawnPos, Quaternion.identity, canvas.transform);
+        SpawnUIItem(bunPrefab);
     }
 
     public void SpawnLettuce()
     {
-        Vector3 spawnPos = GetMouseWorldPos();
-        Instantiate(lettucePrefab, spawnPos, Quaternion.identity, canvas.transform);
+        SpawnUIItem(lettucePrefab);
     }
 
     public void SpawnTomato()
     {
-        Vector3 spawnPos = GetMouseWorldPos();
-        Instantiate(tomatoPrefab, spawnPos, Quaternion.identity, canvas.transform);
+        SpawnUIItem(tomatoPrefab);
     }
 
     public void SpawnPickle()
     {
-        Vector3 spawnPos = GetMouseWorldPos();
-        Instantiate(picklePrefab, spawnPos, Quaternion.identity, canvas.transform);
+        SpawnUIItem(picklePrefab);
     }
 
     public void SpawnPlate()
     {
-        Vector3 spawnPos = GetMouseWorldPos();
-        Instantiate(platePrefab, spawnPos, Quaternion.identity, canvas.transform);
+        SpawnUIItem(platePrefab);
     }
 
     Vector3 GetMouseWorldPos()
     {
         Vector3 mousePos = Input.mousePosition;
         return Camera.main.ScreenToWorldPoint(mousePos);
+    }
+
+    void SpawnUIItem(GameObject prefab)
+    {
+        GameObject gameObject = Instantiate(prefab, canvas.transform);
+        gameObject.GetComponent<RectTransform>().position = Input.mousePosition;
     }
 }
