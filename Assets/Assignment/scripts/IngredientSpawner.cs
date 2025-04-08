@@ -13,6 +13,7 @@ public class IngredientSpawner : MonoBehaviour
     public GameObject tomatoPrefab;
     public GameObject picklePrefab;
     public GameObject platePrefab;
+    public MouseItem mouseItem;
 
     // Update is called once per frame
     void Update()
@@ -60,15 +61,10 @@ public class IngredientSpawner : MonoBehaviour
         SpawnUIItem(platePrefab);
     }
 
-    Vector3 GetMouseWorldPos()
-    {
-        Vector3 mousePos = Input.mousePosition;
-        return Camera.main.ScreenToWorldPoint(mousePos);
-    }
-
     void SpawnUIItem(GameObject prefab)
     {
         GameObject gameObject = Instantiate(prefab, canvas.transform);
         gameObject.GetComponent<RectTransform>().position = Input.mousePosition;
+        mouseItem.currentItem = gameObject;
     }
 }
