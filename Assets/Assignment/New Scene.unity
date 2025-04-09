@@ -171,6 +171,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wasDropped: 0
+  pattyGrillRect: {fileID: 255834532}
+  bunGrillRect: {fileID: 1354034000}
+  trashcanRect: {fileID: 401933668}
+  platingAreaRect: {fileID: 1946893266}
 --- !u!224 &213194203 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5258852637128877539, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
@@ -395,6 +399,8 @@ MonoBehaviour:
   - {fileID: 944034012}
   - {fileID: 1260116836}
   - {fileID: 393916734}
+  slotUsed: 
+  pattyInSlot: []
   dragItem: {fileID: 107309784}
 --- !u!114 &255834536
 MonoBehaviour:
@@ -442,7 +448,7 @@ GameObject:
   - component: {fileID: 393916736}
   - component: {fileID: 393916735}
   m_Layer: 5
-  m_Name: slot 4
+  m_Name: patty slot 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,7 +608,7 @@ GameObject:
   - component: {fileID: 667863413}
   - component: {fileID: 667863412}
   m_Layer: 5
-  m_Name: slot 1
+  m_Name: patty slot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -739,6 +745,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779170897}
+  m_CullTransparentMesh: 1
+--- !u!1 &786401283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 786401284}
+  - component: {fileID: 786401286}
+  - component: {fileID: 786401285}
+  m_Layer: 5
+  m_Name: bun slot 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &786401284
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786401283}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1354034000}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 179, y: -82}
+  m_SizeDelta: {x: 884, y: 450}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &786401285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786401283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8c2518185c6b71e46a64276217510c63, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &786401286
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786401283}
   m_CullTransparentMesh: 1
 --- !u!1 &801871915
 GameObject:
@@ -890,6 +971,10 @@ MonoBehaviour:
   picklePrefab: {fileID: 699459574183527525, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
   platePrefab: {fileID: 7100672298803814359, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
   mouseItem: {fileID: 1840352668}
+  pattyGrillRect: {fileID: 255834532}
+  bunGrillRect: {fileID: 1354034000}
+  trashcanRect: {fileID: 401933668}
+  platingAreaRect: {fileID: 1946893266}
 --- !u!1 &860115165
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,7 +1055,7 @@ GameObject:
   - component: {fileID: 944034014}
   - component: {fileID: 944034013}
   m_Layer: 5
-  m_Name: slot 2
+  m_Name: patty slot 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1318,7 +1403,7 @@ GameObject:
   - component: {fileID: 1260116838}
   - component: {fileID: 1260116837}
   m_Layer: 5
-  m_Name: slot 3
+  m_Name: patty slot 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1392,6 +1477,8 @@ GameObject:
   - component: {fileID: 1354034000}
   - component: {fileID: 1354034002}
   - component: {fileID: 1354034001}
+  - component: {fileID: 1354034003}
+  - component: {fileID: 1354034004}
   m_Layer: 5
   m_Name: bun grill
   m_TagString: Untagged
@@ -1410,7 +1497,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1615019098}
+  - {fileID: 1532127593}
+  - {fileID: 1585743721}
+  - {fileID: 786401284}
   m_Father: {fileID: 233537721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -1456,6 +1547,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354033999}
   m_CullTransparentMesh: 1
+--- !u!114 &1354034003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354033999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c7a425ea25f304b9a8814fbf1e6027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseItem: {fileID: 1840352668}
+  grillSlots:
+  - {fileID: 1615019098}
+  - {fileID: 1532127593}
+  - {fileID: 1585743721}
+  - {fileID: 786401284}
+  bunInSlot: []
+  dragItem: {fileID: 107309784}
+--- !u!114 &1354034004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354033999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 6
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1354034003}
+          m_TargetAssemblyTypeName: BunGrill, Assembly-CSharp
+          m_MethodName: TryGrill
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1517793897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,6 +1670,231 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517793897}
+  m_CullTransparentMesh: 1
+--- !u!1 &1532127592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1532127593}
+  - component: {fileID: 1532127595}
+  - component: {fileID: 1532127594}
+  m_Layer: 5
+  m_Name: bun slot 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1532127593
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532127592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1354034000}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 174, y: 74}
+  m_SizeDelta: {x: 884, y: 450}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1532127594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532127592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8c2518185c6b71e46a64276217510c63, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1532127595
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532127592}
+  m_CullTransparentMesh: 1
+--- !u!1 &1585743720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1585743721}
+  - component: {fileID: 1585743723}
+  - component: {fileID: 1585743722}
+  m_Layer: 5
+  m_Name: bun slot 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1585743721
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585743720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1354034000}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -183, y: -82}
+  m_SizeDelta: {x: 884, y: 450}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1585743722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585743720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8c2518185c6b71e46a64276217510c63, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1585743723
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585743720}
+  m_CullTransparentMesh: 1
+--- !u!1 &1615019097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1615019098}
+  - component: {fileID: 1615019100}
+  - component: {fileID: 1615019099}
+  m_Layer: 5
+  m_Name: bun slot 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1615019098
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615019097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1354034000}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -183, y: 74}
+  m_SizeDelta: {x: 884, y: 450}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1615019099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615019097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8c2518185c6b71e46a64276217510c63, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1615019100
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615019097}
   m_CullTransparentMesh: 1
 --- !u!224 &1741569481 stripped
 RectTransform:
@@ -1686,6 +2051,22 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: -8987152224440315405, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
+      propertyPath: bunGrillRect
+      value: 
+      objectReference: {fileID: 1354034000}
+    - target: {fileID: -8987152224440315405, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
+      propertyPath: trashcanRect
+      value: 
+      objectReference: {fileID: 401933668}
+    - target: {fileID: -8987152224440315405, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
+      propertyPath: pattyGrillRect
+      value: 
+      objectReference: {fileID: 255834532}
+    - target: {fileID: -8987152224440315405, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 1946893266}
     - target: {fileID: 3771025386638756098, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -1795,6 +2176,22 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: -6204148402958142458, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
+      propertyPath: bunGrillRect
+      value: 
+      objectReference: {fileID: 1354034000}
+    - target: {fileID: -6204148402958142458, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
+      propertyPath: trashcanRect
+      value: 
+      objectReference: {fileID: 401933668}
+    - target: {fileID: -6204148402958142458, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
+      propertyPath: pattyGrillRect
+      value: 
+      objectReference: {fileID: 255834532}
+    - target: {fileID: -6204148402958142458, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 1946893266}
     - target: {fileID: 5258852637128877539, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -1904,6 +2301,22 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: -4093643093371858868, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
+      propertyPath: bunGrillRect
+      value: 
+      objectReference: {fileID: 1354034000}
+    - target: {fileID: -4093643093371858868, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
+      propertyPath: trashcanRect
+      value: 
+      objectReference: {fileID: 401933668}
+    - target: {fileID: -4093643093371858868, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
+      propertyPath: pattyGrillRect
+      value: 
+      objectReference: {fileID: 255834532}
+    - target: {fileID: -4093643093371858868, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 1946893266}
     - target: {fileID: 745266005995340600, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2013,6 +2426,22 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: 3148846028781277703, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
+      propertyPath: bunGrillRect
+      value: 
+      objectReference: {fileID: 1354034000}
+    - target: {fileID: 3148846028781277703, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
+      propertyPath: trashcanRect
+      value: 
+      objectReference: {fileID: 401933668}
+    - target: {fileID: 3148846028781277703, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
+      propertyPath: pattyGrillRect
+      value: 
+      objectReference: {fileID: 255834532}
+    - target: {fileID: 3148846028781277703, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 1946893266}
     - target: {fileID: 5520008642629356885, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
       propertyPath: m_Name
       value: fish patty raw
@@ -2210,6 +2639,22 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: 6608454440520596798, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
+      propertyPath: bunGrillRect
+      value: 
+      objectReference: {fileID: 1354034000}
+    - target: {fileID: 6608454440520596798, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
+      propertyPath: trashcanRect
+      value: 
+      objectReference: {fileID: 401933668}
+    - target: {fileID: 6608454440520596798, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
+      propertyPath: pattyGrillRect
+      value: 
+      objectReference: {fileID: 255834532}
+    - target: {fileID: 6608454440520596798, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 1946893266}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2231,6 +2676,22 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: -5523872643159635985, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
+      propertyPath: bunGrillRect
+      value: 
+      objectReference: {fileID: 1354034000}
+    - target: {fileID: -5523872643159635985, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
+      propertyPath: trashcanRect
+      value: 
+      objectReference: {fileID: 401933668}
+    - target: {fileID: -5523872643159635985, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
+      propertyPath: pattyGrillRect
+      value: 
+      objectReference: {fileID: 255834532}
+    - target: {fileID: -5523872643159635985, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 1946893266}
     - target: {fileID: 3229229972555335232, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2428,6 +2889,22 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: 7558852132365368745, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
+      propertyPath: bunGrillRect
+      value: 
+      objectReference: {fileID: 1354034000}
+    - target: {fileID: 7558852132365368745, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
+      propertyPath: trashcanRect
+      value: 
+      objectReference: {fileID: 401933668}
+    - target: {fileID: 7558852132365368745, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
+      propertyPath: pattyGrillRect
+      value: 
+      objectReference: {fileID: 255834532}
+    - target: {fileID: 7558852132365368745, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 1946893266}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2449,6 +2926,22 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: -1314332612146168786, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
+      propertyPath: bunGrillRect
+      value: 
+      objectReference: {fileID: 1354034000}
+    - target: {fileID: -1314332612146168786, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
+      propertyPath: trashcanRect
+      value: 
+      objectReference: {fileID: 401933668}
+    - target: {fileID: -1314332612146168786, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
+      propertyPath: pattyGrillRect
+      value: 
+      objectReference: {fileID: 255834532}
+    - target: {fileID: -1314332612146168786, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 1946893266}
     - target: {fileID: 223678496651144914, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
       propertyPath: m_Name
       value: beef patty raw

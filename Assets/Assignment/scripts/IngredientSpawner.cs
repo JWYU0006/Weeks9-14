@@ -14,6 +14,12 @@ public class IngredientSpawner : MonoBehaviour
     public GameObject picklePrefab;
     public GameObject platePrefab;
     public MouseItem mouseItem;
+    public RectTransform pattyGrillRect;
+    public RectTransform bunGrillRect;
+    public RectTransform trashcanRect;
+    public RectTransform platingAreaRect;
+    public PattyGrillScript pattyGrill;
+    public BunGrill bunGrill;
 
     // Update is called once per frame
     void Update()
@@ -66,8 +72,29 @@ public class IngredientSpawner : MonoBehaviour
     {
         GameObject gameObject = Instantiate(prefab, canvas.transform);      //instantiate the prefab and set canvas as parent
         gameObject.GetComponent<RectTransform>().position = Input.mousePosition;        //set RectTransform after instantiate
-        gameObject.GetComponent<UnityEngine.UI.Image>().raycastTarget = false;      //make grill pointer up event functional, otherwise it will block event trigger
         mouseItem.currentItem = gameObject;     //set current item in MouseItem class
+        gameObject.GetComponent<UnityEngine.UI.Image>().raycastTarget = false;      //make grill pointer up event functional, otherwise it will block event trigger
+        //pass the area detection object
+        DragItem drag = gameObject.GetComponent<DragItem>();
+        if (drag != null)
+        {
+            drag.pattyGrillRect = pattyGrillRect;
+            drag.bunGrillRect = bunGrillRect;
+            drag.trashcanRect = trashcanRect;
+            drag.platingAreaRect = platingAreaRect;
+        }
 
+        CookState cookState = gameObject.GetComponent<CookState>();
+        if (cookState != null)
+        {
+            if (prefab.name.Contains("patty"))
+            {
+                cookState.pattyGrill = pattyGrill;
+            }
+            else if (prefab.name.Contains("bun"))
+            {
+                cookState.bunGrill = bunGrill;
+            }
+        }
     }
 }

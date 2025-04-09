@@ -1,18 +1,20 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PattyGrillScript : MonoBehaviour
+public class BunGrill : MonoBehaviour
 {
     public MouseItem mouseItem;
     public Transform[] grillSlots;      //4 slots, store the slot's position
     public bool[] slotUsed;        //if the slot is empty or not
-    public GameObject[] pattyInSlot;       //Store the patty in each slot
+    public GameObject[] bunInSlot;
     public DragItem dragItem;
 
     // Start is called before the first frame update
     void Start()
     {
-        slotUsed = new bool[grillSlots.Length];     //initialize all array, have same length with grillSlots
-        pattyInSlot = new GameObject[grillSlots.Length];
+        slotUsed = new bool[grillSlots.Length];
+        bunInSlot = new GameObject[grillSlots.Length];
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class PattyGrillScript : MonoBehaviour
         Debug.Log("TryGrill called");
         if (mouseItem.currentItem == null) return;      //if no item is dragged, nothing happens
 
-        if (mouseItem.currentItem.name.Contains("patty"))
+        if (mouseItem.currentItem.name.Contains("bun"))
         {
             if (AddToSlot(mouseItem.currentItem))
             {
@@ -38,40 +40,41 @@ public class PattyGrillScript : MonoBehaviour
         //Debug.Log(slotUsed[0] + ", " + mouseItem.currentItem.name);
     }
 
-    public bool AddToSlot(GameObject patty)
+    public bool AddToSlot(GameObject bun)
     {
         for (int i = 0; i < grillSlots.Length; i++)
         {
             if (!slotUsed[i])
             {
                 slotUsed[i] = true;
-                pattyInSlot[i] = patty;
-                patty.GetComponent<DragItem>().wasDropped = true;
+                bunInSlot[i] = bun;
+                bun.GetComponent<DragItem>().wasDropped = true;
 
-                CookState cookState = patty.GetComponent<CookState>();
-                cookState.pattyGrill = this;
+                CookState cookState = bun.GetComponent<CookState>();
+                cookState.bunGrill = this;
                 cookState.slotIndex = i;
                 cookState.StartCook();
-                patty.transform.position = grillSlots[i].position;
-                patty.transform.SetParent(this.transform);
+
+                bun.transform.position = grillSlots[i].position;
+                bun.transform.SetParent(this.transform);
                 return true;
             }
         }
         return false;
     }
 
-    //IEnumerator Cook(GameObject patty)
+    //IEnumerator Cook(GameObject bun)
     //{
-    //    Debug.Log("Start cooking" + patty.name);
-    //    CookState state = patty.GetComponent<CookState>();
-    //    Image img = patty.GetComponent<Image>();
+    //    Debug.Log("Start cooking" + bun.name);
+    //    CookState state = bun.GetComponent<CookState>();
+    //    Image img = bun.GetComponent<Image>();
 
-    //    yield return new WaitForSeconds(10);
+    //    yield return new WaitForSeconds(5);
     //    img.sprite = state.cooked;
-    //    Debug.Log(patty.name + " cooked");
+    //    Debug.Log(bun.name + " cooked");
 
     //    yield return new WaitForSeconds(5);
     //    img.sprite = state.burnt;
-    //    Debug.Log(patty.name + " burnt");
+    //    Debug.Log(bun.name + " burnt");
     //}
 }
