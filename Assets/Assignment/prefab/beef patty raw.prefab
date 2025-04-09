@@ -120,6 +120,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wasDropped: 0
+  pattyGrillRect: {fileID: 0}
+  bunGrillRect: {fileID: 0}
+  trashcanRect: {fileID: 0}
+  platingAreaRect: {fileID: 0}
+  platingArea: {fileID: 0}
 --- !u!114 &-8200860883501612222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,3 +140,8 @@ MonoBehaviour:
   raw: {fileID: 21300000, guid: 275850154a54f194c816f0f5a09ce87b, type: 3}
   cooked: {fileID: 21300000, guid: 1efd4e53ed7d7ca4c89dd49310f26547, type: 3}
   burnt: {fileID: 21300000, guid: 88cd290de88871f4bbd8b025f86cd75c, type: 3}
+  pattyGrill: {fileID: 0}
+  bunGrill: {fileID: 0}
+  slotIndex: -1
+  isCooking: 0
+  cookTime: 0

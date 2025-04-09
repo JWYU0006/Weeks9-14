@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+//Added to empty object: Spawner
 public class IngredientSpawner : MonoBehaviour
 {
     public Canvas canvas;       //parent canvas, make UI image rendered
@@ -13,75 +12,80 @@ public class IngredientSpawner : MonoBehaviour
     public GameObject tomatoPrefab;
     public GameObject picklePrefab;
     public GameObject platePrefab;
-    public MouseItem mouseItem;
-    public RectTransform pattyGrillRect;
+    public RectTransform pattyGrillRect;        //store position where can drop item
     public RectTransform bunGrillRect;
     public RectTransform trashcanRect;
     public RectTransform platingAreaRect;
+    public MouseItem mouseItem;     //script reference
     public PattyGrillScript pattyGrill;
     public BunGrill bunGrill;
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public PlatingAreaScript platingArea;
 
     //set these functions to prefab's event trigger
     public void SpawnBeefPatty()
     {
+        //Debug.Log("spawn beef patty");
         SpawnUIItem(beefPattyPrefab);   //pass the prefab need to be instantiated
     }
 
     public void SpawnchickenPatty()
     {
+        //Debug.Log("spawn chicken patty");
         SpawnUIItem(chickenPattyPrefab);
     }
 
     public void SpawnFishPatty()
     {
+        //Debug.Log("spawn fish patty");
         SpawnUIItem(fishPattyPrefab);
     }
 
     public void SpawnBun()
     {
+        //Debug.Log("spawn bun");
         SpawnUIItem(bunPrefab);
     }
 
     public void SpawnLettuce()
     {
+        //Debug.Log("spawn lettuce");
         SpawnUIItem(lettucePrefab);
     }
 
     public void SpawnTomato()
     {
+        //Debug.Log("spawn tomato");
         SpawnUIItem(tomatoPrefab);
     }
 
     public void SpawnPickle()
     {
+        //Debug.Log("spawn pickle");
         SpawnUIItem(picklePrefab);
     }
 
     public void SpawnPlate()
     {
+        //Debug.Log("spawn plate");
         SpawnUIItem(platePrefab);
     }
 
     void SpawnUIItem(GameObject prefab)
     {
         GameObject gameObject = Instantiate(prefab, canvas.transform);      //instantiate the prefab and set canvas as parent
-        gameObject.GetComponent<RectTransform>().position = Input.mousePosition;        //set RectTransform after instantiate
+        Debug.Log("spawn " + prefab.name + ": " + gameObject.name);
+        //gameObject.GetComponent<RectTransform>().position = Input.mousePosition;        //set RectTransform after instantiate
         mouseItem.currentItem = gameObject;     //set current item in MouseItem class
         gameObject.GetComponent<UnityEngine.UI.Image>().raycastTarget = false;      //make grill pointer up event functional, otherwise it will block event trigger
-        //pass the area detection object
-        DragItem drag = gameObject.GetComponent<DragItem>();
+
+        DragItem drag = gameObject.GetComponent<DragItem>();        //pass the area detection object
         if (drag != null)
         {
             drag.pattyGrillRect = pattyGrillRect;
             drag.bunGrillRect = bunGrillRect;
             drag.trashcanRect = trashcanRect;
             drag.platingAreaRect = platingAreaRect;
+            drag.platingArea = platingArea;
         }
 
         CookState cookState = gameObject.GetComponent<CookState>();

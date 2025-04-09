@@ -118,3 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66def4c5b049a2a468b91d5627b5f822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wasDropped: 0
+  pattyGrillRect: {fileID: 0}
+  bunGrillRect: {fileID: 0}
+  trashcanRect: {fileID: 0}
+  platingAreaRect: {fileID: 0}
+  platingArea: {fileID: 0}

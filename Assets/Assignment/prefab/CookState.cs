@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Added to prefab
 public class CookState : MonoBehaviour
 {
     public Sprite raw;
@@ -14,6 +15,7 @@ public class CookState : MonoBehaviour
 
     public bool isCooking = false;
     public float cookTime = 0;
+    public bool isPlacedOnGrill = false;
 
     Coroutine cookRoutine;
     Image image;
@@ -36,6 +38,7 @@ public class CookState : MonoBehaviour
         {
             cookRoutine = StartCoroutine(CookProgress());
             isCooking = true;
+            isPlacedOnGrill = true;
         }
     }
 
@@ -52,6 +55,7 @@ public class CookState : MonoBehaviour
     {
         if (pattyGrill != null)
         {
+            //if successfully added to grill slot, start cook
             bool placed = pattyGrill.AddToSlot(gameObject);
             if (placed)
             {
@@ -66,6 +70,24 @@ public class CookState : MonoBehaviour
                 StartCook();
             }
         }
+    }
+
+    public void ReleaseFromGrill()
+    {
+        if (pattyGrill != null && slotIndex != -1)
+        {
+            Debug.Log("Released from patty grill");
+            pattyGrill.pattyInSlot[slotIndex] = null;
+            pattyGrill.slotUsed[slotIndex] = false;
+        }
+        else if (bunGrill != null && slotIndex != -1)
+        {
+            Debug.Log("Released from bun grill");
+            bunGrill.bunInSlot[slotIndex] = null;
+            bunGrill.slotUsed[slotIndex] = false;
+        }
+
+        slotIndex = -1;
     }
 
     IEnumerator CookProgress()

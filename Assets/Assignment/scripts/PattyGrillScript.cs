@@ -40,6 +40,13 @@ public class PattyGrillScript : MonoBehaviour
 
     public bool AddToSlot(GameObject patty)
     {
+        CookState cookState = patty.GetComponent<CookState>();
+        if (cookState != null && cookState.isPlacedOnGrill)
+        {
+            Debug.Log("Skipping AddToSlot ¡ª already placed once.");
+            return true;
+        }
+
         for (int i = 0; i < grillSlots.Length; i++)
         {
             if (!slotUsed[i])
@@ -48,15 +55,16 @@ public class PattyGrillScript : MonoBehaviour
                 pattyInSlot[i] = patty;
                 patty.GetComponent<DragItem>().wasDropped = true;
 
-                CookState cookState = patty.GetComponent<CookState>();
                 cookState.pattyGrill = this;
                 cookState.slotIndex = i;
                 cookState.StartCook();
                 patty.transform.position = grillSlots[i].position;
                 patty.transform.SetParent(this.transform);
+                Debug.Log("AddToSlot called for: " + patty.name);
                 return true;
             }
         }
+        Debug.Log("patty grill no free slot for " + patty.name);
         return false;
     }
 

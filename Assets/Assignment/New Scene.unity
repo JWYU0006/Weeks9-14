@@ -122,59 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &107309782
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 107309783}
-  - component: {fileID: 107309784}
-  m_Layer: 5
-  m_Name: DragItem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &107309783
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107309782}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 233537721}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &107309784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107309782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66def4c5b049a2a468b91d5627b5f822, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wasDropped: 0
-  pattyGrillRect: {fileID: 255834532}
-  bunGrillRect: {fileID: 1354034000}
-  trashcanRect: {fileID: 401933668}
-  platingAreaRect: {fileID: 1946893266}
 --- !u!224 &213194203 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5258852637128877539, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
@@ -291,7 +238,6 @@ RectTransform:
   - {fileID: 1176606605}
   - {fileID: 1087274060}
   - {fileID: 805466621}
-  - {fileID: 107309783}
   - {fileID: 1840352667}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -401,7 +347,7 @@ MonoBehaviour:
   - {fileID: 393916734}
   slotUsed: 
   pattyInSlot: []
-  dragItem: {fileID: 107309784}
+  dragItem: {fileID: 0}
 --- !u!114 &255834536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +921,9 @@ MonoBehaviour:
   bunGrillRect: {fileID: 1354034000}
   trashcanRect: {fileID: 401933668}
   platingAreaRect: {fileID: 1946893266}
+  pattyGrill: {fileID: 255834535}
+  bunGrill: {fileID: 1354034003}
+  platingArea: {fileID: 1946893269}
 --- !u!1 &860115165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,8 +1514,9 @@ MonoBehaviour:
   - {fileID: 1532127593}
   - {fileID: 1585743721}
   - {fileID: 786401284}
+  slotUsed: 
   bunInSlot: []
-  dragItem: {fileID: 107309784}
+  dragItem: {fileID: 0}
 --- !u!114 &1354034004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1628,11 +1578,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 233537721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -46, y: -29}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 713.99994, y: 360.99994}
   m_SizeDelta: {x: 400, y: 300}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1517793899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1966,6 +1916,7 @@ GameObject:
   - component: {fileID: 1946893266}
   - component: {fileID: 1946893268}
   - component: {fileID: 1946893267}
+  - component: {fileID: 1946893269}
   m_Layer: 5
   m_Name: plating area
   m_TagString: Untagged
@@ -1987,11 +1938,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 233537721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -44, y: 63}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 716, y: -327}
   m_SizeDelta: {x: 400, y: 300}
-  m_Pivot: {x: 1, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946893267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2030,6 +1981,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946893265}
   m_CullTransparentMesh: 1
+--- !u!114 &1946893269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946893265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ed7b675a74e0845949b55f2bd3b77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotPosition: {fileID: 1946893266}
+  ingredientsOnPlate: []
 --- !u!224 &2104860867 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3192447588319863880, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
@@ -2051,6 +2016,10 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: -8987152224440315405, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 1946893269}
     - target: {fileID: -8987152224440315405, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
       propertyPath: bunGrillRect
       value: 
@@ -2177,6 +2146,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 255834535}
     - target: {fileID: -6204148402958142458, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 1946893269}
+    - target: {fileID: -6204148402958142458, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
       propertyPath: bunGrillRect
       value: 
       objectReference: {fileID: 1354034000}
@@ -2302,6 +2275,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 255834535}
     - target: {fileID: -4093643093371858868, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 1946893269}
+    - target: {fileID: -4093643093371858868, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
       propertyPath: bunGrillRect
       value: 
       objectReference: {fileID: 1354034000}
@@ -2426,6 +2403,10 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: 3148846028781277703, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 1946893269}
     - target: {fileID: 3148846028781277703, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
       propertyPath: bunGrillRect
       value: 
@@ -2640,6 +2621,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 255834535}
     - target: {fileID: 6608454440520596798, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 1946893269}
+    - target: {fileID: 6608454440520596798, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
       propertyPath: bunGrillRect
       value: 
       objectReference: {fileID: 1354034000}
@@ -2676,6 +2661,10 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: -5523872643159635985, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 1946893269}
     - target: {fileID: -5523872643159635985, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
       propertyPath: bunGrillRect
       value: 
@@ -2890,6 +2879,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 255834535}
     - target: {fileID: 7558852132365368745, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 1946893269}
+    - target: {fileID: 7558852132365368745, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
       propertyPath: bunGrillRect
       value: 
       objectReference: {fileID: 1354034000}
@@ -2926,6 +2919,10 @@ PrefabInstance:
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: -1314332612146168786, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 1946893269}
     - target: {fileID: -1314332612146168786, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
       propertyPath: bunGrillRect
       value: 
