@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 208972714115033388}
   - component: {fileID: 7859781113048196467}
   - component: {fileID: 3148846028781277703}
+  - component: {fileID: 1517933228203977874}
   m_Layer: 5
   m_Name: fish patty raw
   m_TagString: Untagged
@@ -118,3 +119,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66def4c5b049a2a468b91d5627b5f822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wasDropped: 0
+--- !u!114 &1517933228203977874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520008642629356885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 861939a7dfb196846964c42dd3ab719f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raw: {fileID: 21300000, guid: abd54c8ecb455074998a7e970cfca897, type: 3}
+  cooked: {fileID: 21300000, guid: 9790f88be666b5a4e9ab82aacd5e0147, type: 3}
+  burnt: {fileID: 21300000, guid: db4361180baaf8747a3105ac9d51ef0d, type: 3}

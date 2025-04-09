@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9041703377726805605}
   - component: {fileID: 1525111534257671875}
   - component: {fileID: 7558852132365368745}
+  - component: {fileID: 4736220943290248266}
   m_Layer: 5
   m_Name: bun
   m_TagString: Untagged
@@ -118,3 +119,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66def4c5b049a2a468b91d5627b5f822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wasDropped: 0
+--- !u!114 &4736220943290248266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2790282748238308123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 861939a7dfb196846964c42dd3ab719f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raw: {fileID: 21300000, guid: 8c2518185c6b71e46a64276217510c63, type: 3}
+  cooked: {fileID: 21300000, guid: c3378105abb33ce4fac3fe241021db27, type: 3}
+  burnt: {fileID: 21300000, guid: 47d669fe2f371d342b97f7e15fa2d8f2, type: 3}

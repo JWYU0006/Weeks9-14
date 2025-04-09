@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5805714337059162381}
   - component: {fileID: 3807842318792081020}
   - component: {fileID: -1314332612146168786}
+  - component: {fileID: -8200860883501612222}
   m_Layer: 5
   m_Name: beef patty raw
   m_TagString: Untagged
@@ -118,3 +119,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66def4c5b049a2a468b91d5627b5f822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wasDropped: 0
+--- !u!114 &-8200860883501612222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223678496651144914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 861939a7dfb196846964c42dd3ab719f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raw: {fileID: 21300000, guid: 275850154a54f194c816f0f5a09ce87b, type: 3}
+  cooked: {fileID: 21300000, guid: 1efd4e53ed7d7ca4c89dd49310f26547, type: 3}
+  burnt: {fileID: 21300000, guid: 88cd290de88871f4bbd8b025f86cd75c, type: 3}

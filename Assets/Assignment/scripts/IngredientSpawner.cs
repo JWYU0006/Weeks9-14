@@ -21,9 +21,10 @@ public class IngredientSpawner : MonoBehaviour
 
     }
 
+    //set these functions to prefab's event trigger
     public void SpawnBeefPatty()
     {
-        SpawnUIItem(beefPattyPrefab);
+        SpawnUIItem(beefPattyPrefab);   //pass the prefab need to be instantiated
     }
 
     public void SpawnchickenPatty()
@@ -63,8 +64,10 @@ public class IngredientSpawner : MonoBehaviour
 
     void SpawnUIItem(GameObject prefab)
     {
-        GameObject gameObject = Instantiate(prefab, canvas.transform);
-        gameObject.GetComponent<RectTransform>().position = Input.mousePosition;
-        mouseItem.currentItem = gameObject;
+        GameObject gameObject = Instantiate(prefab, canvas.transform);      //instantiate the prefab and set canvas as parent
+        gameObject.GetComponent<RectTransform>().position = Input.mousePosition;        //set RectTransform after instantiate
+        gameObject.GetComponent<UnityEngine.UI.Image>().raycastTarget = false;      //make grill pointer up event functional, otherwise it will block event trigger
+        mouseItem.currentItem = gameObject;     //set current item in MouseItem class
+
     }
 }
