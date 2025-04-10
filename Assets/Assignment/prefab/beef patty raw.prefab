@@ -97,7 +97,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: -1314332612146168786}
           m_TargetAssemblyTypeName: DragItem, Assembly-CSharp
-          m_MethodName: OnPointerClick
+          m_MethodName: HandleClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -121,6 +121,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDraggable: 1
   wasDropped: 0
+  canvas: {fileID: 0}
+  OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1314332612146168786}
+        m_TargetAssemblyTypeName: DragItem, Assembly-CSharp
+        m_MethodName: PickUpFromGrill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   pattyGrillRect: {fileID: 0}
   bunGrillRect: {fileID: 0}
   trashcanRect: {fileID: 0}
@@ -128,8 +144,6 @@ MonoBehaviour:
   pattyGrill: {fileID: 0}
   bunGrill: {fileID: 0}
   platingArea: {fileID: 0}
-  canvas: {fileID: 0}
-  mouseItem: {fileID: 0}
 --- !u!114 &-8200860883501612222
 MonoBehaviour:
   m_ObjectHideFlags: 0

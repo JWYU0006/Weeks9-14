@@ -20,28 +20,20 @@ public class DragItem : MonoBehaviour
     public PattyGrillScript pattyGrill;
     public BunGrill bunGrill;
     public PlatingAreaScript platingArea;
-    //public MouseItem mouseItem;
+    public bool isFromPlatingArea = false;
 
-    private void Start()
+    //// This function should be called from a EventTrigger
+    public void HandleClick()
     {
-
+        OnClick.Invoke();
     }
 
-    void SetupEventTrigger()
-    {
-
-    }
-
-    private void Update()
-    {
-        //Debug.Log(isDraggable);
-    }
-    public void OnPointerClick(PointerEventData eventData)
+    public void PickUpFromGrill()
     {
         CookState cookState = GetComponent<CookState>();
         if (cookState == null || cookState.slotIndex == -1)
         {
-            Debug.Log("2Picked up from grill (click)");
+            Debug.Log("return pick");
             return;
         }
 
@@ -52,7 +44,7 @@ public class DragItem : MonoBehaviour
         transform.SetParent(canvas.transform);
         wasDropped = false;
 
-        Debug.Log("3Picked up from grill (click)");
+        Debug.Log("Picked up from grill (click)");
     }
 
     IEnumerator SetMouseItemNextFrame()
@@ -157,13 +149,29 @@ public class DragItem : MonoBehaviour
             if (trashcanRect != null && (target == trashcanRect.gameObject || target.transform.IsChildOf(trashcanRect.transform)))
             {
                 Debug.Log("Dropped into trashcan. Destroyed.");
+                PlatingAreaScript plating = FindObjectOfType<PlatingAreaScript>();
+                if (plating != null)
+                {
+                    plating.RemoveIngredient(gameObject);
+                }
                 Destroy(gameObject);
                 yield break;
             }
         }
 
         //没有成功放置
-        Debug.Log("No valid drop zone matched. Destroying.");
-        Destroy(gameObject);
+        if (isFromPlatingArea)
+        {
+            Debug.Log("No valid drop zone matched, returning to plating area.");
+            transform.position = platingAreaRect.position;
+            transform.SetParent(FindObjectOfType<PlatingAreaScript>().transform);
+            wasDropped = true;
+            yield break;
+        }
+        else
+        {
+            Debug.Log("No valid drop zone matched. Destroying.");
+            Destroy(gameObject);
+        }
     }
 }

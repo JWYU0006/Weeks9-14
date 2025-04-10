@@ -60,8 +60,35 @@ public class PlatingAreaScript : MonoBehaviour
         ingredient.transform.position = slotPosition.position;
     }
 
-    public void PickPlatingArea()
+    public void BeginGroupPickup()
     {
-        Debug.Log("Test");
+        if (ingredientsOnPlate.Count == 0) return;
+
+        GameObject plate = ingredientsOnPlate[0];
+
+        DragItem drag = plate.GetComponent<DragItem>();
+        drag.isFromPlatingArea = true;
+
+        for (int i = 1; i < ingredientsOnPlate.Count; i++)
+        {
+            ingredientsOnPlate[i].transform.SetParent(plate.transform);
+        }
+
+        // 设置 plate 为当前拖拽物体
+        MouseItem mouse = FindObjectOfType<MouseItem>();
+        if (mouse != null)
+        {
+            mouse.currentItem = plate;
+            Debug.Log("Begin group pickup: " + plate.name);
+        }
+    }
+
+    public void RemoveIngredient(GameObject ingredient)
+    {
+        if (ingredientsOnPlate.Contains(ingredient))
+        {
+            ingredientsOnPlate.Remove(ingredient);
+            Debug.Log("Removed from plating area: " + ingredient.name);
+        }
     }
 }

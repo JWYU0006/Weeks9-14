@@ -225,8 +225,8 @@ RectTransform:
   - {fileID: 401933668}
   - {fileID: 255834532}
   - {fileID: 1354034000}
-  - {fileID: 388375662}
   - {fileID: 1517793898}
+  - {fileID: 388375662}
   - {fileID: 588928793}
   - {fileID: 1117027347}
   - {fileID: 2104860867}
@@ -455,23 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 388375663}
-          m_TargetAssemblyTypeName: PlatingAreaScript, Assembly-CSharp
-          m_MethodName: Test
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_Delegates: []
 --- !u!1 &393916733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +993,7 @@ MonoBehaviour:
   pattyGrillRect: {fileID: 255834532}
   bunGrillRect: {fileID: 1354034000}
   trashcanRect: {fileID: 401933668}
-  platingAreaRect: {fileID: 0}
+  platingAreaRect: {fileID: 388375662}
   mouseItem: {fileID: 1840352668}
   pattyGrill: {fileID: 255834535}
   bunGrill: {fileID: 1354034003}
@@ -1631,7 +1615,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517793897}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1640,7 +1624,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 713.99994, y: 360.99994}
+  m_AnchoredPosition: {x: 713.9999, y: 361}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1517793899
@@ -1979,9 +1963,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 233537721}
     m_Modifications:
     - target: {fileID: -8987152224440315405, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8987152224440315405, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: -8987152224440315405, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: -8987152224440315405, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
       propertyPath: bunGrillRect
       value: 
@@ -1994,6 +1986,10 @@ PrefabInstance:
       propertyPath: pattyGrillRect
       value: 
       objectReference: {fileID: 255834532}
+    - target: {fileID: -8987152224440315405, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3771025386638756098, guid: 28c3bb5cdd2bda349b1353184aef7767, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -2096,9 +2092,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 233537721}
     m_Modifications:
     - target: {fileID: -6204148402958142458, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6204148402958142458, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: -6204148402958142458, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: -6204148402958142458, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
       propertyPath: bunGrillRect
       value: 
@@ -2111,6 +2115,10 @@ PrefabInstance:
       propertyPath: pattyGrillRect
       value: 
       objectReference: {fileID: 255834532}
+    - target: {fileID: -6204148402958142458, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5258852637128877539, guid: 120c22b05452ca94191fc6cf5b2e6bdd, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -2221,6 +2229,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1354034003}
     - target: {fileID: -4093643093371858868, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4093643093371858868, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
       propertyPath: mouseItem
       value: 
       objectReference: {fileID: 1840352668}
@@ -2244,10 +2256,22 @@ PrefabInstance:
       propertyPath: pattyGrillRect
       value: 
       objectReference: {fileID: 255834532}
+    - target: {fileID: -4093643093371858868, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 745266005995340600, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 805466622}
+    - target: {fileID: 745266005995340600, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnchickenPatty
+      objectReference: {fileID: 0}
+    - target: {fileID: 745266005995340600, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: IngredientSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3037558094275953823, guid: d4ae5dbb34857bb4e829567123b8e654, type: 3}
       propertyPath: m_Name
       value: chicken patty raw
@@ -2354,6 +2378,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1354034003}
     - target: {fileID: 3148846028781277703, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3148846028781277703, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
       propertyPath: mouseItem
       value: 
       objectReference: {fileID: 1840352668}
@@ -2377,6 +2405,10 @@ PrefabInstance:
       propertyPath: pattyGrillRect
       value: 
       objectReference: {fileID: 255834532}
+    - target: {fileID: 3148846028781277703, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5520008642629356885, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
       propertyPath: m_Name
       value: fish patty raw
@@ -2465,6 +2497,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 805466622}
+    - target: {fileID: 7859781113048196467, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnFishPatty
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859781113048196467, guid: 40a93bd4a1b80484da628c212a2d43a7, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: IngredientSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2567,9 +2607,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 805466622}
     - target: {fileID: 6608454440520596798, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608454440520596798, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: 6608454440520596798, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6608454440520596798, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
       propertyPath: bunGrillRect
       value: 
@@ -2582,6 +2630,10 @@ PrefabInstance:
       propertyPath: pattyGrillRect
       value: 
       objectReference: {fileID: 255834532}
+    - target: {fileID: 6608454440520596798, guid: 939262183045d4d43a355231fb5aeb39, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2596,9 +2648,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 233537721}
     m_Modifications:
     - target: {fileID: -5523872643159635985, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5523872643159635985, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
       propertyPath: pattyGrill
       value: 
       objectReference: {fileID: 255834535}
+    - target: {fileID: -5523872643159635985, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
+      propertyPath: platingArea
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: -5523872643159635985, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
       propertyPath: bunGrillRect
       value: 
@@ -2611,6 +2671,10 @@ PrefabInstance:
       propertyPath: pattyGrillRect
       value: 
       objectReference: {fileID: 255834532}
+    - target: {fileID: -5523872643159635985, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3229229972555335232, guid: 587f14b27dc7d3647a9bde8f0052cc35, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2716,6 +2780,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 805466622}
+    - target: {fileID: 1525111534257671875, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnBun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1525111534257671875, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: IngredientSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2649467049737873890, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2809,6 +2881,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1354034003}
     - target: {fileID: 7558852132365368745, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558852132365368745, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
       propertyPath: mouseItem
       value: 
       objectReference: {fileID: 1840352668}
@@ -2832,6 +2908,10 @@ PrefabInstance:
       propertyPath: pattyGrillRect
       value: 
       objectReference: {fileID: 255834532}
+    - target: {fileID: 7558852132365368745, guid: 4b6ba9e2194234c4cb7f04fb8a52e581, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2854,6 +2934,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1354034003}
     - target: {fileID: -1314332612146168786, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1314332612146168786, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
       propertyPath: mouseItem
       value: 
       objectReference: {fileID: 1840352668}
@@ -2877,6 +2961,10 @@ PrefabInstance:
       propertyPath: pattyGrillRect
       value: 
       objectReference: {fileID: 255834532}
+    - target: {fileID: -1314332612146168786, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
+      propertyPath: platingAreaRect
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 223678496651144914, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
       propertyPath: m_Name
       value: beef patty raw
@@ -2885,6 +2973,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 805466622}
+    - target: {fileID: 3807842318792081020, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnBeefPatty
+      objectReference: {fileID: 0}
+    - target: {fileID: 3807842318792081020, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: IngredientSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4086704841151625683, guid: 098495e4ef311324684704d239ba2a8a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

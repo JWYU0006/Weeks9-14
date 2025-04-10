@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MouseItem : MonoBehaviour
 {
@@ -29,6 +30,36 @@ public class MouseItem : MonoBehaviour
                 }
 
                 currentItem = null;
+            }
+        }
+        else
+        {
+            // 检测点击 plate 开始整组拖动
+            if (Input.GetMouseButtonDown(0))
+            {
+                PointerEventData pointerData = new PointerEventData(EventSystem.current)
+                {
+                    position = Input.mousePosition
+                };
+
+                List<RaycastResult> results = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(pointerData, results);
+
+                foreach (RaycastResult result in results)
+                {
+                    GameObject target = result.gameObject;
+                    Debug.Log("Click check under mouse: " + target.name);
+
+                    if (target.name.ToLower().Contains("plate"))
+                    {
+                        PlatingAreaScript plating = FindObjectOfType<PlatingAreaScript>();
+                        if (plating != null)
+                        {
+                            plating.BeginGroupPickup();
+                            break;
+                        }
+                    }
+                }
             }
         }
     }
