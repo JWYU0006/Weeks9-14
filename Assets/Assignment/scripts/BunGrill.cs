@@ -23,23 +23,6 @@ public class BunGrill : MonoBehaviour
         //Debug.Log(slotUsed[0] + ", " + mouseItem.currentItem.name);
     }
 
-    public void TryGrill()
-    {
-        Debug.Log("TryGrill called");
-        if (mouseItem.currentItem == null) return;      //if no item is dragged, nothing happens
-
-        if (mouseItem.currentItem.name.Contains("bun"))
-        {
-            if (AddToSlot(mouseItem.currentItem))
-            {
-                mouseItem.currentItem = null;
-                return;
-            }
-        }
-        mouseItem.currentItem = null;
-        //Debug.Log(slotUsed[0] + ", " + mouseItem.currentItem.name);
-    }
-
     public bool AddToSlot(GameObject bun)
     {
         for (int i = 0; i < grillSlots.Length; i++)

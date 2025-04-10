@@ -21,27 +21,10 @@ public class PattyGrillScript : MonoBehaviour
         //Debug.Log(slotUsed[0] + ", " + mouseItem.currentItem.name);
     }
 
-    public void TryGrill()
-    {
-        Debug.Log("TryGrill called");
-        if (mouseItem.currentItem == null) return;      //if no item is dragged, nothing happens
-
-        if (mouseItem.currentItem.name.Contains("patty"))
-        {
-            if (AddToSlot(mouseItem.currentItem))
-            {
-                mouseItem.currentItem = null;
-                return;
-            }
-        }
-        mouseItem.currentItem = null;
-        //Debug.Log(slotUsed[0] + ", " + mouseItem.currentItem.name);
-    }
-
     public bool AddToSlot(GameObject patty)
     {
         CookState cookState = patty.GetComponent<CookState>();
-        if (cookState != null && cookState.isPlacedOnGrill)
+        if (cookState != null && cookState.slotIndex != -1)
         {
             Debug.Log("Skipping AddToSlot ¡ª already placed once.");
             return true;
@@ -58,8 +41,10 @@ public class PattyGrillScript : MonoBehaviour
                 cookState.pattyGrill = this;
                 cookState.slotIndex = i;
                 cookState.StartCook();
+
                 patty.transform.position = grillSlots[i].position;
                 patty.transform.SetParent(this.transform);
+
                 Debug.Log("AddToSlot called for: " + patty.name);
                 return true;
             }

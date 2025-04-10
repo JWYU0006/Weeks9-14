@@ -15,7 +15,6 @@ public class CookState : MonoBehaviour
 
     public bool isCooking = false;
     public float cookTime = 0;
-    public bool isPlacedOnGrill = false;
 
     Coroutine cookRoutine;
     Image image;
@@ -38,7 +37,6 @@ public class CookState : MonoBehaviour
         {
             cookRoutine = StartCoroutine(CookProgress());
             isCooking = true;
-            isPlacedOnGrill = true;
         }
     }
 
@@ -76,13 +74,13 @@ public class CookState : MonoBehaviour
     {
         if (pattyGrill != null && slotIndex != -1)
         {
-            Debug.Log("Released from patty grill");
+            //Debug.Log("Released from patty grill");
             pattyGrill.pattyInSlot[slotIndex] = null;
             pattyGrill.slotUsed[slotIndex] = false;
         }
         else if (bunGrill != null && slotIndex != -1)
         {
-            Debug.Log("Released from bun grill");
+            //Debug.Log("Released from bun grill");
             bunGrill.bunInSlot[slotIndex] = null;
             bunGrill.slotUsed[slotIndex] = false;
         }
@@ -93,6 +91,14 @@ public class CookState : MonoBehaviour
     IEnumerator CookProgress()
     {
         cookTime = 0;
+
+        yield return new WaitForSeconds(0.5f);
+        DragItem drag = GetComponent<DragItem>();
+        if (drag != null)
+        {
+            drag.isDraggable = true;
+        }
+
         while (cookTime <= 16)
         {
             cookTime += Time.deltaTime;

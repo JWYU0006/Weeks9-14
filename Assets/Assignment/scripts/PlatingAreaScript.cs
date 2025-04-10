@@ -10,11 +10,13 @@ public class PlatingAreaScript : MonoBehaviour
     public bool TryAddIngredient(GameObject ingredient)
     {
         string name = ingredient.name;
+        Debug.Log("Try to add" + name + "to plating area");
 
         if (name.Contains("plate"))
         {
             if (ingredientsOnPlate.Count == 0)
             {
+                Debug.Log("place plate");
                 AddToPlate(ingredient);
                 return true;
             }
@@ -56,5 +58,10 @@ public class PlatingAreaScript : MonoBehaviour
         ingredientsOnPlate.Add(ingredient);
         ingredient.transform.SetParent(transform);
         ingredient.transform.position = slotPosition.position;
+    }
+
+    public void PickPlatingArea()
+    {
+        Debug.Log("Test");
     }
 }

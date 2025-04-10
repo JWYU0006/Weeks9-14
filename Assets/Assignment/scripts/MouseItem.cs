@@ -15,6 +15,21 @@ public class MouseItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(currentItem.GetComponent<UnityEngine.UI.Image>().raycastTarget);
+        //Debug.Log(currentItem.name);
+        if (currentItem != null)
+        {
+            currentItem.transform.position = Input.mousePosition;
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                DragItem drag = currentItem.GetComponent<DragItem>();
+                if (drag != null)
+                {
+                    drag.StartCoroutine("CheckDropTarget");
+                }
+
+                currentItem = null;
+            }
+        }
     }
 }
