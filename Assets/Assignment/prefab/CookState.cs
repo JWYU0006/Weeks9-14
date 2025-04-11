@@ -110,6 +110,13 @@ public class CookState : MonoBehaviour
             else if (cookTime >= 10)
             {
                 image.sprite = cooked;
+                //delete initial designed features, move to plating area automatically.
+                PlatingAreaScript plating = FindObjectOfType<PlatingAreaScript>();
+                if (plating != null && plating.TryAddIngredient(gameObject))
+                {
+                    Debug.Log("Auto moved to plating area.");
+                    yield break;
+                }
             }
             else
             {

@@ -60,4 +60,17 @@ public class BunGrill : MonoBehaviour
     //    img.sprite = state.burnt;
     //    Debug.Log(bun.name + " burnt");
     //}
+
+    public void ClearGrill()
+    {
+        for (int i = 0; i < bunInSlot.Length; i++)
+        {
+            if (bunInSlot[i] != null)
+            {
+                Destroy(bunInSlot[i]);
+                bunInSlot[i] = null;
+                slotUsed[i] = false;
+            }
+        }
+    }
 }

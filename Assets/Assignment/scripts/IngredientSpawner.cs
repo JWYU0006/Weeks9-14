@@ -99,10 +99,12 @@ public class IngredientSpawner : MonoBehaviour
             if (prefab.name.Contains("patty"))
             {
                 cookState.pattyGrill = pattyGrill;
+                cookState.ResumeOnGrill();  // 自动放到 grill
             }
             else if (prefab.name.Contains("bun"))
             {
                 cookState.bunGrill = bunGrill;
+                cookState.ResumeOnGrill();  // 自动放到 grill
             }
         }
     }

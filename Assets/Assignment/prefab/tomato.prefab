@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5978665489211616238}
   - component: {fileID: 7032835896678523802}
   - component: {fileID: 1742438838587976980}
-  - component: {fileID: 3229229972555335232}
   - component: {fileID: -5523872643159635985}
   m_Layer: 5
   m_Name: tomato
@@ -77,35 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3229229972555335232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5951251400386034590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: IngredientSpawner, Assembly-CSharp
-          m_MethodName: SpawnTomato
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &-5523872643159635985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +90,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDraggable: 1
   wasDropped: 0
+  canvas: {fileID: 0}
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
   pattyGrillRect: {fileID: 0}
   bunGrillRect: {fileID: 0}
   trashcanRect: {fileID: 0}
@@ -127,4 +101,4 @@ MonoBehaviour:
   pattyGrill: {fileID: 0}
   bunGrill: {fileID: 0}
   platingArea: {fileID: 0}
-  canvas: {fileID: 0}
+  isFromPlatingArea: 0

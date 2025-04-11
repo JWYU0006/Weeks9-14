@@ -59,6 +59,14 @@ public class DragItem : MonoBehaviour
         }
     }
 
+    public void ClickMoveToPlatingArea()
+    {
+        if (platingArea != null)
+        {
+            platingArea.TryAddIngredient(gameObject);
+        }
+    }
+
     //IEnumerator CheckDropTarget()
     //{
     //    Vector2 mousePos = Input.mousePosition;
@@ -90,88 +98,89 @@ public class DragItem : MonoBehaviour
 
     IEnumerator CheckDropTarget()
     {
-        PointerEventData pointerData = new PointerEventData(EventSystem.current)
-        {
-            position = Input.mousePosition
-        };
+        yield break;
+        //PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        //{
+        //    position = Input.mousePosition
+        //};
 
-        List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(pointerData, results);
+        //List<RaycastResult> results = new List<RaycastResult>();
+        //EventSystem.current.RaycastAll(pointerData, results);
 
-        GameObject underMouse = null;
+        //GameObject underMouse = null;
 
-        foreach (RaycastResult result in results)
-        {
-            GameObject target = result.gameObject;
-            underMouse = target;
-            Debug.Log("UI under mouse: " + target.name);
+        //foreach (RaycastResult result in results)
+        //{
+        //    GameObject target = result.gameObject;
+        //    underMouse = target;
+        //    Debug.Log("UI under mouse: " + target.name);
 
-            // --- Plating Area ---
-            if (platingArea != null && (target == platingArea.gameObject || target.transform.IsChildOf(platingArea.transform)))
-            {
-                if (platingArea.TryAddIngredient(gameObject))
-                {
-                    Debug.Log("Dropped into Plating Area");
-                    wasDropped = true;
-                    yield break;
-                }
-            }
+        //    // --- Plating Area ---
+        //    if (platingArea != null && (target == platingArea.gameObject || target.transform.IsChildOf(platingArea.transform)))
+        //    {
+        //        if (platingArea.TryAddIngredient(gameObject))
+        //        {
+        //            Debug.Log("Dropped into Plating Area");
+        //            wasDropped = true;
+        //            yield break;
+        //        }
+        //    }
 
-            // --- Patty Grill ---
-            if (pattyGrill != null && (target == pattyGrill.gameObject || target.transform.IsChildOf(pattyGrill.transform)))
-            {
-                if (name.ToLower().Contains("patty"))
-                {
-                    if (pattyGrill.AddToSlot(gameObject))
-                    {
-                        Debug.Log("Dropped onto Patty Grill");
-                        wasDropped = true;
-                        yield break;
-                    }
-                }
-            }
+        //    // --- Patty Grill ---
+        //    if (pattyGrill != null && (target == pattyGrill.gameObject || target.transform.IsChildOf(pattyGrill.transform)))
+        //    {
+        //        if (name.ToLower().Contains("patty"))
+        //        {
+        //            if (pattyGrill.AddToSlot(gameObject))
+        //            {
+        //                Debug.Log("Dropped onto Patty Grill");
+        //                wasDropped = true;
+        //                yield break;
+        //            }
+        //        }
+        //    }
 
-            // --- Bun Grill ---
-            if (bunGrill != null && (target == bunGrill.gameObject || target.transform.IsChildOf(bunGrill.transform)))
-            {
-                if (name.ToLower().Contains("bun"))
-                {
-                    if (bunGrill.AddToSlot(gameObject))
-                    {
-                        Debug.Log("Dropped onto Bun Grill");
-                        wasDropped = true;
-                        yield break;
-                    }
-                }
-            }
+        //    // --- Bun Grill ---
+        //    if (bunGrill != null && (target == bunGrill.gameObject || target.transform.IsChildOf(bunGrill.transform)))
+        //    {
+        //        if (name.ToLower().Contains("bun"))
+        //        {
+        //            if (bunGrill.AddToSlot(gameObject))
+        //            {
+        //                Debug.Log("Dropped onto Bun Grill");
+        //                wasDropped = true;
+        //                yield break;
+        //            }
+        //        }
+        //    }
 
-            // --- Trashcan ---
-            if (trashcanRect != null && (target == trashcanRect.gameObject || target.transform.IsChildOf(trashcanRect.transform)))
-            {
-                Debug.Log("Dropped into trashcan. Destroyed.");
-                PlatingAreaScript plating = FindObjectOfType<PlatingAreaScript>();
-                if (plating != null)
-                {
-                    plating.RemoveIngredient(gameObject);
-                }
-                Destroy(gameObject);
-                yield break;
-            }
-        }
+        //    // --- Trashcan ---
+        //    if (trashcanRect != null && (target == trashcanRect.gameObject || target.transform.IsChildOf(trashcanRect.transform)))
+        //    {
+        //        Debug.Log("Dropped into trashcan. Destroyed.");
+        //        PlatingAreaScript plating = FindObjectOfType<PlatingAreaScript>();
+        //        if (plating != null)
+        //        {
+        //            plating.RemoveIngredient(gameObject);
+        //        }
+        //        Destroy(gameObject);
+        //        yield break;
+        //    }
+        //}
 
-        //没有成功放置
-        if (isFromPlatingArea)
-        {
-            Debug.Log("No valid drop zone matched, returning to plating area.");
-            transform.position = platingAreaRect.position;
-            transform.SetParent(FindObjectOfType<PlatingAreaScript>().transform);
-            wasDropped = true;
-            yield break;
-        }
-        else
-        {
-            Debug.Log("No valid drop zone matched. Destroying.");
-            Destroy(gameObject);
-        }
+        ////没有成功放置
+        //if (isFromPlatingArea)
+        //{
+        //    Debug.Log("No valid drop zone matched, returning to plating area.");
+        //    transform.position = platingAreaRect.position;
+        //    transform.SetParent(FindObjectOfType<PlatingAreaScript>().transform);
+        //    wasDropped = true;
+        //    yield break;
+        //}
+        //else
+        //{
+        //    Debug.Log("No valid drop zone matched. Destroying.");
+        //    Destroy(gameObject);
+        //}
     }
 }

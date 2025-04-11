@@ -67,4 +67,17 @@ public class PattyGrillScript : MonoBehaviour
     //    img.sprite = state.burnt;
     //    Debug.Log(patty.name + " burnt");
     //}
+
+    public void ClearGrill()
+    {
+        for (int i = 0; i < pattyInSlot.Length; i++)
+        {
+            if (pattyInSlot[i] != null)
+            {
+                Destroy(pattyInSlot[i]);
+                pattyInSlot[i] = null;
+                slotUsed[i] = false;
+            }
+        }
+    }
 }
