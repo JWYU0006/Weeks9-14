@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class OrderScript : MonoBehaviour
 {
-    public Image orderToppingImage;
+    public Image orderToppingImage;     //UI image for displaying required ingredients
     public Image orderPattyImage;
 
     public Sprite lettuceSprite;
@@ -16,37 +14,32 @@ public class OrderScript : MonoBehaviour
     public Sprite chickenSprite;
     public Sprite fishSprite;
 
-    public string currentTopping;
+    public string currentTopping;       //Stores name of required ingredients
     public string currentPatty;
 
-    void Update()
+    void Start()
     {
-        if (orderPattyImage.sprite == null)
-        {
-            GenerateRandomOrder();
-        }
+        GenerateRandomOrder();      //Create a new order when the game starts
     }
 
+    //Randomly generate a topping + patty order
     public void GenerateRandomOrder()
     {
-        //Randomly generate topping
+        //Randomly choose topping
         string[] toppings = { "lettuce", "tomato", "pickle" };
-        string randomTopping = toppings[Random.Range(0, toppings.Length)];
-        currentTopping = randomTopping;
-
-        switch (randomTopping)
+        currentTopping = toppings[Random.Range(0, toppings.Length)];
+        //Update topping image based on the selected name
+        switch (currentTopping)
         {
             case "lettuce": orderToppingImage.sprite = lettuceSprite; break;
             case "tomato": orderToppingImage.sprite = tomatoSprite; break;
             case "pickle": orderToppingImage.sprite = pickleSprite; break;
         }
-
-        //Randomly generate patty
+        //Randomly choose patty
         string[] patties = { "beef", "chicken", "fish" };
-        string randomPatty = patties[Random.Range(0, patties.Length)];
-        currentPatty = randomPatty;
-
-        switch (randomPatty)
+        currentPatty = patties[Random.Range(0, patties.Length)];
+        //Update patty image based on the selected name
+        switch (currentPatty)
         {
             case "beef": orderPattyImage.sprite = beefSprite; break;
             case "chicken": orderPattyImage.sprite = chickenSprite; break;

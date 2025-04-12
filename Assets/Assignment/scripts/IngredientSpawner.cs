@@ -76,7 +76,6 @@ public class IngredientSpawner : MonoBehaviour
         Debug.Log("spawn " + prefab.name + ": " + gameObject.name);
         //gameObject.GetComponent<RectTransform>().position = Input.mousePosition;        //set RectTransform after instantiate
         mouseItem.currentItem = gameObject;     //set current item in MouseItem class
-        gameObject.GetComponent<UnityEngine.UI.Image>().raycastTarget = true;
 
         DragItem drag = gameObject.GetComponent<DragItem>();        //pass the area detection object
         if (drag != null)
@@ -88,7 +87,6 @@ public class IngredientSpawner : MonoBehaviour
             drag.pattyGrill = pattyGrill;
             drag.bunGrill = bunGrill;
             drag.platingArea = platingArea;
-            //drag.mouseItem = mouseItem;
             drag.canvas = canvas;
         }
 
@@ -99,12 +97,12 @@ public class IngredientSpawner : MonoBehaviour
             if (prefab.name.Contains("patty"))
             {
                 cookState.pattyGrill = pattyGrill;
-                cookState.ResumeOnGrill();  // 自动放到 grill
+                cookState.ResumeOnGrill();      //put on grill
             }
             else if (prefab.name.Contains("bun"))
             {
                 cookState.bunGrill = bunGrill;
-                cookState.ResumeOnGrill();  // 自动放到 grill
+                cookState.ResumeOnGrill();
             }
         }
     }

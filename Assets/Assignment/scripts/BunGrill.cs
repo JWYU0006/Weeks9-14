@@ -1,26 +1,17 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
+//This script is based on PattyGrillScript
 public class BunGrill : MonoBehaviour
 {
-    public MouseItem mouseItem;
     public Transform[] grillSlots;      //4 slots, store the slot's position
     public bool[] slotUsed;        //if the slot is empty or not
     public GameObject[] bunInSlot;
-    public DragItem dragItem;
 
     // Start is called before the first frame update
     void Start()
     {
         slotUsed = new bool[grillSlots.Length];
         bunInSlot = new GameObject[grillSlots.Length];
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Debug.Log(slotUsed[0] + ", " + mouseItem.currentItem.name);
     }
 
     public bool AddToSlot(GameObject bun)
@@ -31,35 +22,29 @@ public class BunGrill : MonoBehaviour
             {
                 slotUsed[i] = true;
                 bunInSlot[i] = bun;
-                bun.GetComponent<DragItem>().wasDropped = true;
 
                 CookState cookState = bun.GetComponent<CookState>();
-                cookState.bunGrill = this;
-                cookState.slotIndex = i;
-                cookState.StartCook();
+                if (cookState != null)
+                {
+                    cookState.bunGrill = this;
+                    cookState.slotIndex = i;
+                }
 
                 bun.transform.position = grillSlots[i].position;
-                bun.transform.SetParent(this.transform);
                 return true;
             }
         }
         return false;
     }
 
-    //IEnumerator Cook(GameObject bun)
-    //{
-    //    Debug.Log("Start cooking" + bun.name);
-    //    CookState state = bun.GetComponent<CookState>();
-    //    Image img = bun.GetComponent<Image>();
-
-    //    yield return new WaitForSeconds(5);
-    //    img.sprite = state.cooked;
-    //    Debug.Log(bun.name + " cooked");
-
-    //    yield return new WaitForSeconds(5);
-    //    img.sprite = state.burnt;
-    //    Debug.Log(bun.name + " burnt");
-    //}
+    public void RemoveFromSlot(int index)
+    {
+        if (index >= 0 && index < slotUsed.Length)
+        {
+            slotUsed[index] = false;
+            bunInSlot[index] = null;
+        }
+    }
 
     public void ClearGrill()
     {
@@ -68,9 +53,9 @@ public class BunGrill : MonoBehaviour
             if (bunInSlot[i] != null)
             {
                 Destroy(bunInSlot[i]);
-                bunInSlot[i] = null;
-                slotUsed[i] = false;
             }
+            bunInSlot[i] = null;
+            slotUsed[i] = false;
         }
     }
 }
